@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Books</title>
+        <% if(typeof css !== 'undefined' && css.length > 0){ %> <%css.map((file) => {%>
+        <link rel="stylesheet" href="/<%=file%>.css" />
+        <%})%> <%}%>
+    </head>
+    <body>
+        <header>
+            <div id="header-books">Books</div>
+            <div id="header-dashboard">Dashboard</div>
+        </header>
+        <div id="add-book-form">
+            <form action="/books/add" method="POST">
+                <label for="title">Titre</label>
+                <input id="title" name="title" type="text" required />
+                <label for="author">Auteur</label>
+                <input id="author" name="author" type="text" required />
+                <!-- <label for="title">Titre</label>
+                <input id="title" name="title" type="text" required> ajouter les genres ici -->
+                <label for="language">Langue</label>
+                <input id="language" name="language" type="text" />
+                <label for="publisher">Éditeur</label>
+                <input id="publisher" name="publisher" type="text" />
+                <label for="book_collection">Collection</label>
+                <input id="book_collection" name="book_collection" type="text" />
+                <label for="release_date">Date de publication</label>
+                <input id="release_date" name="release_date" type="date" />
+                <label for="pages">Pages</label>
+                <input id="pages" name="pages" type="number" min="1" />
+                <label for="isbn">ISBN</label>
+                <input id="isbn" name="isbn" type="text" required />
+                <label for="cover">Couverture</label>
+                <input id="cover" name="cover" type="text" required />
+                <button type="submit">Envoyer</button>
+            </form>
+            <div id="cover-preview">
+                <img />
+            </div>
+        </div>
+        <script>
+            const inputs = document.querySelectorAll('#add-book-form form input:not([type="submit"])');
+            [...inputs].map((input) => {
+                input.onkeyup = (e) => {
+                    if (e.target.value) {
+                        e.target.style.border = '1px solid rgb(53, 181, 61)';
+                        e.target.style.backgroundColor = 'rgba(66, 227, 77, 0.2)';
+                    } else {
+                        e.target.style.border = '1px solid rgba(0,0,0,0.6)';
+                        e.target.style.backgroundColor = 'rgb(255,255,255)';
+                    }
+                };
+            });
+        </script>
+        <script>
+            const headerBtns = document.querySelectorAll('header div');
+            [...headerBtns].map((btn) => {
+                btn.onclick = (e) => {
+                    if (e.target.id === 'header-books') {
+                        window.location.href = '/books';
+                    } else if (e.target.id === 'header-dashboard') {
+                        window.location.href = '/dashboard';
+                    }
+                };
+            });
+        </script>
+        <script>
+            const coverInput = document.querySelector("#add-book-form form input[id='cover']");
+            const coverImg = document.querySelector('#cover-preview img');
+            coverInput.onkeyup = (e) => (coverImg.src = e.target.value);
+        </script>
+    </body>
+</html>

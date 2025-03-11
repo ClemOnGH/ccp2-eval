@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #6b96d6;
+    width: 100%;
+    height: 60px;
+}
+
+header div {
+    font-size: 18px;
+    line-height: 60px;
+    font-family: 'Montserrat';
+    color: white;
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    transition: all 0.25s ease-out;
+}
+
+header div:hover {
+    background-color: #346abc;
+    font-weight: 800;
+    border-bottom: 3px solid black;
+    color: black;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+
+#add-book-form {
+    padding-top: 2rem;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+
+#add-book-form form {
+    line-height: 30px;
+    font-family: 'Montserrat';
+    text-align: right;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: repeat(10, 40px);
+    gap: 1rem;
+}
+
+#add-book-form input:not([type='submit']) {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.25s ease-out;
+}
+
+#add-book-form input[type='submit']:hover {
+    cursor: pointer;
+}
+
+#add-book-form input:focus {
+    outline: none;
+}
+
+#add-book-form #cover-preview {
+    position: relative;
+    height: auto;
+    width: 50%;
+}
+
+#add-book-form #cover-preview img {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
