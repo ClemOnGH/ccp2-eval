@@ -1,0 +1,18 @@
+<div id="book-cards-container">
+    <% if (typeof data !== 'undefined'){ %> <%data.forEach((book) => {%>
+    <div class="book-card" data-link="<%=book._id%>">
+        <div class="book-cover">
+            <img src="<%=book.cover%>" />
+        </div>
+        <div class="book-info">
+            <p>
+                <strong><%=book.title%></strong><br />
+                de <%=book.author%>
+            </p>
+            <% if (book.book_collection){%>
+            <p>Collection <b><%=book.book_collection%></b></p>
+            <%}%>
+        </div>
+    </div>
+    <%})%> <%}%>
+</div>
