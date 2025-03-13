@@ -7,6 +7,8 @@ headerBtns.forEach((btn) => {
             window.location.href = '/dashboard';
         } else if (e.target.id === 'header-add-book') {
             window.location.href = '/books/add';
+        } else if (e.target.id === 'header-auth') {
+            window.location.href = '/account/auth';
         }
     };
 });

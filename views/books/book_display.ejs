@@ -1,0 +1,22 @@
+<div id="display-container">
+    <div id="display-cover">
+        <img src="<%=data.cover%>" />
+    </div>
+    <div id="display-info">
+        <h1><%=data.title%></h1>
+        <p>Écrit par <strong><%=data.author%></strong></p>
+        <p>Publié par <b><%=data.publisher%></b></p>
+        <% if(data.genre && data.genre.length > 0){%>
+        <p><%= data.genre.join(', ')%></p>
+        <%}%> <% if(data.language){%>
+        <p>Langue: <b><%=data.language%></b></p>
+        <%}%> <% if(data.book_collection){%>
+        <p>Collection: <b><%=data.book_collection%></b></p>
+        <%}%> <%if(data.pages){%>
+        <p>Pages: <b><%=data.pages%></b></p>
+        <%}%> <% if(data.release_date){%>
+        <p>Publié le <b><%=data.release_date%></b></p>
+        <%}%>
+        <p>ISBN: <b><%=data.isbn%></b></p>
+    </div>
+</div>

@@ -22,7 +22,7 @@ header div {
     flex-grow: 1;
     height: 100%;
     text-align: center;
-    border-bottom: 3px solid transparent;
+    border-bottom: 3px solid #6b96d6;
     transition: all 0.25s ease-out;
 }
 

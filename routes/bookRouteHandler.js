@@ -40,10 +40,11 @@ router
     })
     .get('/:id', async (req, res) => {
         try {
-            res.render('layout', {
-                css: ['books/layout'],
+            const content = await books.findOne({ _id: req.params.id });
+            res.render('books/layout', {
+                css: ['books/layout', 'books/display'],
                 components: ['navbar', 'book_display'],
-                data: await books.findOne({ _id: req.params.id }),
+                data: content,
             });
         } catch (e) {
             console.error(e);

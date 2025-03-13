@@ -1,0 +1,27 @@
+* {
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#auth-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#auth-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#auth-form::after {
+    backdrop-filter: sepia(50%);
+    height: 100%;
+    width: 100%;
+}

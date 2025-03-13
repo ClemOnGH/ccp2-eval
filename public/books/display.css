@@ -1,0 +1,31 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#display-container {
+    margin-top: 2rem;
+    min-height: 40%;
+    display: flex;
+    gap: 1rem;
+}
+
+#display-cover {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+}
+
+#display-cover img {
+    width: 60%;
+}
+
+#display-info {
+    padding: 1rem 0;
+    flex-grow: 1;
+}
